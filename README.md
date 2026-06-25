@@ -18,8 +18,8 @@
   ██████   ███████  ██████   ██████  ██   ██ ██   ██    ██
 
 ╔══════════════════════════════════════════════════════════════════════╗
-║  v1.2.0                                                              ║
-║  The bridge between legal expertise and technology                   ║
+║  v1.3.0                                                              ║
+║  Legal Operations Knowledge Base                                     ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║                                                                      ║
 ║  $ whoami                                                            ║
@@ -29,14 +29,13 @@
 ║  {                                                                   ║
 ║    "status": "🟢 Active Development",                                ║
 ║    "license": "MIT",                                                 ║
-║    "structure": "3 learning levels + code solutions",                ║
-║    "languages": ["EN", "ES (coming soon)"]                           ║
+║    "focus": "Legal Ops + Process + Technology",                      ║
+║    "market": ["USA", "Canada", "Europe"]                             ║
 ║  }                                                                   ║
 ║                                                                      ║
 ║  $ echo $MISSION                                                     ║
-║  > Lawyers hear "RAG" and think it's a rag doll.                     ║
-║  > Engineers hear "force majeure" and think it's a French error.     ║
-║  > This glossary fixes that.                                         ║
+║  > Legal Ops isn't about tools. It's about designing how legal       ║
+║  > work gets done. Technology is just the enabler.                   ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -62,26 +61,26 @@ $ ./start-here.sh
 
 <div align="center">
 
-### 👉 New to Legal Tech? Start with [01-foundations/](./01-foundations/)
+### 👉 New to Legal Ops? Start with [01-foundations/](./01-foundations/)
 
-**This is not a traditional glossary.** It's a structured learning path that takes you from "what is legal tech?" to "how do I build intelligent legal systems?"
+**This is not just a glossary.** It's a comprehensive resource for Legal Operations professionals who need to understand people, processes, and technology.
 
 </div>
 
-### 🎯 Your Starting Point Depends on Who You Are
+### 🎯 Who Should Use This?
 
 | If you are... | Start here | Why |
 |---------------|-----------|-----|
-| 🎓 **Lawyer / Legal Professional** | [01-foundations/glossary.md](./01-foundations/glossary.md) | Understand the landscape, vendors, and evolution of legal tech |
-| 💻 **Engineer / Developer** | [01-foundations/roles.md](./01-foundations/roles.md) | Understand the roles, then jump to [03-technologies/](./03-technologies/) |
-| 📊 **Legal Ops Professional** | [02-process-design/](./02-process-design/) | Skip foundations, go straight to workflow design |
-| 🤔 **Just Curious** | [01-foundations/glossary.md](./01-foundations/glossary.md) | The narrative journey through legal tech evolution |
+| 🎓 **Lawyer moving to Legal Ops** | [01-foundations/glossary.md](./01-foundations/glossary.md) | Understand the landscape, vendors, and evolution |
+| 💻 **Engineer joining Legal Ops team** | [01-foundations/roles.md](./01-foundations/roles.md) | Understand roles, then jump to [03-technologies/](./03-technologies/) |
+| 📊 **Legal Ops Professional** | [02-process-design/](./02-process-design/) | Deep dive into workflow design and optimization |
+| 🤔 **Just curious about Legal Ops** | [01-foundations/glossary.md](./01-foundations/glossary.md) | The complete narrative journey |
 
-**The recommended path for everyone:**
+**The recommended path:**
 
 ```
 01-foundations/ → 02-process-design/ → 03-technologies/
-   (What?)           (How?)              (With what?)
+   (What & Why)      (How to design)     (What tools)
 ```
 
 ---
@@ -92,119 +91,93 @@ $ ./start-here.sh
 $ cat problem.txt
 ```
 
-The gap between legal professionals and engineers isn't just about language—it's about **mental models**.
+Legal Operations is more than just buying tools. It's about **designing how legal work gets done**.
 
 | ❌ What Happens | 💰 The Cost |
 |----------------|-------------|
-| Lawyers can't evaluate if a vendor's "AI-powered" tool is useful | Wasted budget |
-| Engineers build solutions that violate legal principles | Failed implementations |
-| Projects fail because of bad communication, not bad code | Millions lost |
-| Legal tech tools that nobody actually uses | Low adoption |
+| Legal Ops = buying software | Wasted budget on unused tools |
+| No process design, just automation | Failed implementations |
+| Technology without strategy | Low adoption, frustrated teams |
+| Siloed approach (tools vs people vs process) | Millions lost annually |
 
-**This resource fixes that.**
+**This resource fixes that by treating Legal Ops as a discipline, not a shopping list.**
 
 ---
 
-## 🗺️ Current Structure
+## 🗺️ Repository Structure
 
 ```bash
-$ tree -L 2
+$ tree -L 2 -a
 ```
 
-```mermaid
-flowchart TD
-    ROOT["📚 legal-tech-glossary/<br/><i>The bridge between law and tech</i>"]
-    
-    subgraph Foundations["🟢 01-foundations/ — START HERE"]
-        direction TB
-        F1["📖 glossary.md<br/><i>The narrative journey</i>"]
-        F2["👥 roles.md<br/><i>Real vs inflated titles</i>"]
-        F3["📄 what-is-legal-tech.md<br/><i>Clear definition</i>"]
-    end
-    
-    subgraph Process["🟡 02-process-design/ — COMING SOON"]
-        direction TB
-        P1["📥 intake.md"]
-        P2["🔀 triage.md"]
-        P3["🧠 decision-engine.md"]
-        P4["⚖️ build-vs-buy.md"]
-        P5["⚙️ workflow-optimization.md"]
-    end
-    
-    subgraph Tech["🔵 03-technologies/ — IN PROGRESS"]
-        direction TB
-        T1["🤖 ai-and-llms.md"]
-        T2["🧠 rag-and-knowledge.md"]
-        T3["📄 clm-and-contracts.md"]
-        T4["⚙️ automation-and-workflow.md"]
-        T5["🛡️ compliance-and-governance.md"]
-        T6["📊 legal-operations.md"]
-    end
-    
-    subgraph Support["📦 Support Files"]
-        direction TB
-        S1["📋 CONTRIBUTING.md"]
-        S2["📜 LICENSE"]
-        S3["🎨 templates/"]
-    end
-    
-    ROOT --> Foundations
-    ROOT --> Process
-    ROOT --> Tech
-    ROOT --> Support
-
-    style ROOT fill:#0a0e1a,stroke:#3b82f6,color:#fff,stroke-width:3px
-    style Foundations fill:#22c55e,stroke:#16a34a,color:#fff
-    style Process fill:#eab308,stroke:#ca8a04,color:#fff
-    style Tech fill:#3b82f6,stroke:#1e3a8a,color:#fff
-    style Support fill:#6b7280,stroke:#4b5563,color:#fff
-    style F1 fill:#16a34a,stroke:#15803d,color:#fff
-    style F2 fill:#16a34a,stroke:#15803d,color:#fff
-    style F3 fill:#16a34a,stroke:#15803d,color:#fff
+```
+legal-tech-glossary/
+│
+├──  README.md                      ← You are here
+├──  CONTRIBUTING.md                ← How to contribute
+├──  LICENSE                        ← MIT License
+│
+├──  01-foundations/                ← START HERE
+│   ├── README.md
+│   ├── glossary.md                   ✅ The narrative journey
+│   ├── roles.md                      🚧 Coming soon
+│   └── what-is-legal-tech.md         🚧 Coming soon
+│
+├── 📂 02-process-design/             ← How to design workflows
+│   ├── README.md
+│   ├── intake.md                     🚧 Coming soon
+│   ├── triage.md                     🚧 Coming soon
+│   ├── decision-engine.md            🚧 Coming soon
+│   ├── build-vs-buy.md               🚧 Coming soon
+│   └── workflow-optimization.md      🚧 Coming soon
+│
+├──  03-technologies/               ← Tools and technologies
+│   ├── README.md
+│   ├── ai-and-llms.md                🚧 Coming soon
+│   ├── rag-and-knowledge.md          🚧 Coming soon
+│   ├── clm-and-contracts.md          🚧 Coming soon
+│   ├── automation-and-workflow.md    🚧 Coming soon
+│   ├── compliance-and-governance.md  🚧 Coming soon
+│   └── legal-operations.md           🚧 Coming soon
+│
+├── 📂 04-code-examples/              ← Working solutions (future)
+│   └── (POCs, scripts, templates)    💻 Coming soon
+│
+└── 📂 templates/
+    └── term-template.md
 ```
 
 **Legend:**
-- 🟢 **Green** = Available now (start here)
-- 🟡 **Yellow** = Coming soon
-- 🔵 **Blue** = In progress
-- ⚪ **Gray** = Support files
+- ✅ = Available now (start here)
+- 🚧 = Coming soon
+- 💻 = Future code examples
 
 ---
 
 ## 🔮 What This Repo Will Become
 
-```bash
-$ cat roadmap.md
-```
-
-This is not just a glossary. It's evolving into a **complete resource hub** for legal tech professionals.
-
 ```mermaid
-flowchart TD
-    NOW["🎯 CURRENT STATE<br/><b>Conceptual Foundation</b><br/>• Narrative documents<br/>• Term definitions<br/>• Role clarifications"]
+flowchart LR
+    NOW["🟢 NOW<br/>Conceptual<br/>Foundation"]
+    NEXT["🟡 NEXT<br/>Process Design<br/>Frameworks"]
+    CODE["🔵 CODE<br/>Working<br/>Solutions"]
+    TOOLS["🟣 TOOLS<br/>Reusable<br/>Assets"]
+    COMM["🩷 COMMUNITY<br/>Case Studies<br/>& Reviews"]
     
-    NEXT["🚀 NEXT PHASE<br/><b>Process Design</b><br/>• Intake-to-archive frameworks<br/>• BPMN templates<br/>• Decision engine patterns"]
+    NOW --> NEXT --> CODE --> TOOLS --> COMM
     
-    CODE["💻 CODE PHASE<br/><b>Working Solutions</b><br/>• Python/Django POCs<br/>• RAG implementations<br/>• Document automation scripts"]
-    
-    TOOLS["🛠️ TOOLS PHASE<br/><b>Reusable Assets</b><br/>• Legal tech starter kits<br/>• GDPR compliance checkers<br/>• Workflow generators"]
-    
-    COMMUNITY["🌍 COMMUNITY PHASE<br/><b>Collaborative Platform</b><br/>• Case studies from contributors<br/>• Multilingual support<br/>• Vendor-neutral reviews"]
-    
-    NOW --> NEXT --> CODE --> TOOLS --> COMMUNITY
-
-    style NOW fill:#22c55e,stroke:#16a34a,color:#fff,stroke-width:3px
+    style NOW fill:#22c55e,stroke:#16a34a,color:#fff,stroke-width:2px
     style NEXT fill:#eab308,stroke:#ca8a04,color:#fff
     style CODE fill:#3b82f6,stroke:#1e3a8a,color:#fff
     style TOOLS fill:#8b5cf6,stroke:#7c3aed,color:#fff
-    style COMMUNITY fill:#ec4899,stroke:#db2777,color:#fff
+    style COMM fill:#ec4899,stroke:#db2777,color:#fff
 ```
 
-### What's Coming Next
+### Development Roadmap
 
 | Phase | What You'll Find | Timeline |
 |-------|------------------|----------|
-| 🟢 **Now** | Conceptual foundations, role definitions, narrative glossary | ✅ Live |
+| 🟢 **Now** | Conceptual foundations, narrative glossary, role definitions | ✅ Live |
 | 🟡 **Next** | Process design guides, intake frameworks, BPMN templates | 2-4 weeks |
 | 🔵 **Code** | Python/Django POCs, RAG implementations, automation scripts | 1-2 months |
 | 🟣 **Tools** | Reusable starter kits, compliance checkers, workflow generators | 3-4 months |
@@ -220,18 +193,18 @@ $ ./learning-paths --help
 
 ### 🟢 Level 1: Foundations (START HERE)
 
-**Goal:** Understand what legal tech really is, who the real players are, and the basic vocabulary.
+**Goal:** Understand Legal Ops as a discipline, the landscape, and basic vocabulary.
 
 | 📖 Topic | 📝 What You'll Learn | ⏱️ Time | Status |
 |----------|----------------------|---------|--------|
-| [**The Legal Tech Landscape**](./01-foundations/glossary.md) | The narrative journey: vendors → legal ops → automation → AI → regulation | 25 min | ✅ Available |
-| [**Roles in Legal Tech**](./01-foundations/roles.md) | Legal Engineer vs Legal AI Engineer vs inflated titles | 15 min | 🚧 Coming soon |
+| [**The Legal Ops Landscape**](./01-foundations/glossary.md) | Evolution: vendors → legal ops → automation → AI → regulation | 25 min | ✅ Available |
+| [**Roles in Legal Ops**](./01-foundations/roles.md) | Legal Engineer vs Legal Ops vs inflated titles | 15 min | 🚧 Coming soon |
 | [**What is Legal Tech?**](./01-foundations/what-is-legal-tech.md) | Clear definition, scope, and misconceptions | 10 min | 🚧 Coming soon |
 
 **Who should start here?**
-- Lawyers exploring legal tech for the first time
-- Engineers joining a legal tech team
-- Anyone confused by the buzzwords
+- Lawyers transitioning to Legal Ops
+- Engineers joining Legal Ops teams
+- Anyone wanting to understand the field
 
 ---
 
@@ -239,7 +212,7 @@ $ ./learning-paths --help
 
 **Goal:** Learn how to design, optimize, and automate legal workflows from intake to archive.
 
-| 📖 Topic | 📝 What You'll Learn | ⏱️ Time | Status |
+| 📖 Topic |  What You'll Learn | ️ Time | Status |
 |----------|----------------------|---------|--------|
 | [**Intake & Matter Creation**](./02-process-design/intake.md) | How to capture legal requests effectively | 20 min | 🚧 Coming soon |
 | [**Triage & Prioritization**](./02-process-design/triage.md) | Classifying and routing matters efficiently | 15 min | 🚧 Coming soon |
@@ -256,7 +229,7 @@ $ ./learning-paths --help
 
 ### 🔵 Level 3: Technologies
 
-**Goal:** Deep dive into the specific tools, frameworks, and technologies powering legal tech.
+**Goal:** Deep dive into the specific tools, frameworks, and technologies powering Legal Ops.
 
 | 📖 Category | 🔧 Technologies Covered | 📊 Terms | Status |
 |-------------|-------------------------|----------|--------|
@@ -271,8 +244,8 @@ $ ./learning-paths --help
 
 **Who should dive deep here?**
 - Engineers implementing specific technologies
-- Legal Tech vendors evaluating tools
-- Anyone needing technical depth on a specific topic
+- Legal Ops professionals evaluating vendors
+- Anyone needing technical depth
 
 ---
 
@@ -330,29 +303,29 @@ $ cat featured-topics.md
 $ cat blog-posts.md
 ```
 
-I write about legal tech, AI governance, and the intersection of law and engineering on LinkedIn. Here are key posts that complement this resource:
+I write about Legal Ops, legal technology, and the intersection of law and engineering on LinkedIn. Here are key posts that complement this resource:
 
 | 📅 Date | 📝 Title | 🏷️ Topic | 🔗 Link |
 |---------|----------|----------|---------|
 | Jun 2026 | Why Most Legal AI Projects Fail (And How to Fix Them) | AI Strategy | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
-| May 2026 | RAG in Legal Tech: Beyond the Hype | RAG | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
-| Apr 2026 | The EU AI Act: What Legal Tech Builders Need to Know | Compliance | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
+| May 2026 | RAG in Legal Ops: Beyond the Hype | RAG | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
+| Apr 2026 | The EU AI Act: What Legal Ops Builders Need to Know | Compliance | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
 | Mar 2026 | BPMN for Lawyers: A Practical Guide | Process Design | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
-| Feb 2026 | Why I Built This Glossary | Meta | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
+| Feb 2026 | Why I Built This Resource | Meta | [Read →](https://www.linkedin.com/in/rafaelmontaner) |
 
 **Want more?** Follow me on [LinkedIn](https://www.linkedin.com/in/rafaelmontaner) for weekly insights.
 
 ---
 
-## 🔄 This Is a Living Document
+## 🔄 This Is a Living Resource
 
 ```bash
 $ git log --oneline
 ```
 
-The legal tech landscape evolves fast. New tools emerge, regulations change, and best practices shift. This resource evolves with it.
+The Legal Ops landscape evolves fast. New tools emerge, regulations change, and best practices shift. This resource evolves with it.
 
-**What "living document" means:**
+**What "living resource" means:**
 - ✅ Content is updated regularly as the field evolves
 - ✅ Community contributions are welcomed and reviewed
 - ✅ Mistakes are corrected quickly
@@ -372,7 +345,7 @@ The legal tech landscape evolves fast. New tools emerge, regulations change, and
 $ git contribute --help
 ```
 
-This is a living resource. The legal tech landscape evolves fast, and we need the community to keep this current.
+This is a living resource. The Legal Ops landscape evolves fast, and we need the community to keep this current.
 
 **You don't need to know Git to contribute.** See [CONTRIBUTING.md](./CONTRIBUTING.md) for:
 - 🟢 **Path A:** Email or LinkedIn (no Git required)
@@ -392,7 +365,7 @@ $ cat contact.json
 ```json
 {
   "maintainer": "Rafael Montaner",
-  "role": "Legal Engineer & Legal Tech Consultant",
+  "role": "Legal Engineer & Legal Ops Consultant",
   "linkedin": "linkedin.com/in/rafaelmontaner",
   "website": "www.rafaelmontaner.com",
   "email": "rafael.montaner@gmail.com"

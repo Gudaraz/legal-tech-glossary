@@ -188,10 +188,18 @@ Common failure patterns:
 
 Successful legal automation follows a complete lifecycle:
 
-```
-INTAKE → TRIAGE → PROCESS → DECISION → EXECUTION → REVIEW → ARCHIVE
-   ↑                                                              |
-   └──────────────── FEEDBACK LOOP ──────────────────────────────┘
+```mermaid
+flowchart LR
+    A["📥 INTAKE"] --> B["🔀 TRIAGE"] --> C["⚙️ PROCESS"] --> D["🧠 DECISION"] --> E["▶️ EXECUTION"] --> F["🔍 REVIEW"] --> G["📦 ARCHIVE"]
+    G -. "🔄 FEEDBACK LOOP" .-> A
+
+    style A fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style B fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style C fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style D fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style E fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style F fill:#3b82f6,stroke:#1e3a8a,color:#fff
+    style G fill:#3b82f6,stroke:#1e3a8a,color:#fff
 ```
 
 Each stage requires different skills and decisions:
@@ -249,39 +257,19 @@ Phase 5: Grounded Generation (RAG)
 
 A RAG-based legal system requires:
 
-```
-┌─────────────────────────────────────────────────┐
-│                   USER QUERY                     │
-│  "What is our policy on data transfers to       │
-│   third countries?"                              │
-└──────────────────────┬──────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────┐
-│              RETRIEVAL LAYER                     │
-│  • Search knowledge base (policies, contracts)   │
-│  • Vector database (semantic similarity)         │
-│  • Metadata filters (jurisdiction, date, type)   │
-└──────────────────────┬──────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────┐
-│              GENERATION LAYER                    │
-│  • LLM processes query + retrieved context       │
-│  • Generates answer with citations               │
-│  • Flags confidence level                        │
-└──────────────────────┬──────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────┐
-│              OUTPUT                              │
-│  "Based on our Data Transfer Policy (2024),      │
-│   transfers to third countries require:           │
-│   1. SCCs (Standard Contractual Clauses)          │
-│   2. DPIA (Data Protection Impact Assessment)     │
-│   3. Legal team approval for high-risk transfers  │
-│   Source: Policy Doc §4.2, Contract Template v3"  │
-└─────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    A["🔍 USER QUERY<br/><i>'What is our policy on data transfers to third countries?'</i>"]
+    B["📚 RETRIEVAL LAYER<br/>• Search knowledge base<br/>• Vector database (semantic similarity)<br/>• Metadata filters (jurisdiction, date, type)"]
+    C["🤖 GENERATION LAYER<br/>• LLM processes query + retrieved context<br/>• Generates answer with citations<br/>• Flags confidence level"]
+    D["📄 OUTPUT<br/><i>'Based on our Data Transfer Policy (2024),<br/>transfers to third countries require:<br/>1. SCCs (Standard Contractual Clauses)<br/>2. DPIA (Data Protection Impact Assessment)<br/>3. Legal team approval for high-risk transfers<br/>Source: Policy Doc §4.2, Contract Template v3'</i>"]
+
+    A --> B --> C --> D
+
+    style A fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    style B fill:#0a0e1a,stroke:#3b82f6,color:#fff
+    style C fill:#0a0e1a,stroke:#3b82f6,color:#fff
+    style D fill:#22c55e,stroke:#16a34a,color:#fff
 ```
 
 ### The Regulatory Layer: GDPR and EU AI Act
@@ -347,36 +335,46 @@ The future of legal tech is not about individual tools. It's about creating an *
 
 ### What This Looks Like
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    THE INTELLIGENT LEGAL FUNCTION            │
-│                                                             │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ Knowledge │  │ Process  │  │   Data   │  │    AI    │   │
-│  │   Base    │  │  Engine  │  │ Platform │  │  Layer   │   │
-│  │          │  │          │  │          │  │          │   │
-│  │ Policies │  │ Workflows│  │ Metrics  │  │ RAG      │   │
-│  │ Contracts│  │ Decision │  │ Spend    │  │ Analysis │   │
-│  │ Precedent│  │ Routing  │  │ Risk     │  │ Drafting │   │
-│  └─────┬────┘  └─────┬────┘  └─────┬────┘  └─────┬────┘   │
-│        │              │              │              │        │
-│        └──────────────┴──────┬───────┴──────────────┘        │
-│                              │                               │
-│                    ┌─────────▼─────────┐                     │
-│                    │   INTEGRATION     │                     │
-│                    │      LAYER        │                     │
-│                    │  (APIs, Webhooks, │                     │
-│                    │   Connectors)     │                     │
-│                    └─────────┬─────────┘                     │
-│                              │                               │
-│              ┌───────────────┼───────────────┐               │
-│              │               │               │               │
-│        ┌─────▼─────┐  ┌─────▼─────┐  ┌─────▼─────┐         │
-│        │   Legal   │  │  Business │  │  External │         │
-│        │   Team    │  │   Teams   │  │  Counsel  │         │
-│        └───────────┘  └───────────┘  └───────────┘         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph Core["🏛️ THE INTELLIGENT LEGAL FUNCTION"]
+        direction TB
+        
+        subgraph Pillars["Four Pillars"]
+            direction LR
+            KB["📚 Knowledge Base<br/>Policies · Contracts · Precedents"]
+            PE["⚙️ Process Engine<br/>Workflows · Decision · Routing"]
+            DP["📊 Data Platform<br/>Metrics · Spend · Risk"]
+            AL["🤖 AI Layer<br/>RAG · Analysis · Drafting"]
+        end
+
+        IL["🔗 Integration Layer<br/>APIs · Webhooks · Connectors"]
+
+        Pillars --> IL
+    end
+
+    subgraph Consumers["Who Uses It"]
+        direction LR
+        LT["⚖️ Legal Team"]
+        BT["💼 Business Teams"]
+        EC["🏢 External Counsel"]
+    end
+
+    IL --> LT
+    IL --> BT
+    IL --> EC
+
+    style Core fill:#0a0e1a,stroke:#3b82f6,color:#fff
+    style Pillars fill:#161b22,stroke:#3b82f6,color:#fff
+    style Consumers fill:#161b22,stroke:#22c55e,color:#fff
+    style KB fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    style PE fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    style DP fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    style AL fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    style IL fill:#0a0e1a,stroke:#3b82f6,color:#fff
+    style LT fill:#22c55e,stroke:#16a34a,color:#fff
+    style BT fill:#22c55e,stroke:#16a34a,color:#fff
+    style EC fill:#22c55e,stroke:#16a34a,color:#fff
 ```
 
 ### The Four Pillars
